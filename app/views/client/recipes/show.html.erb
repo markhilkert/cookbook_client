@@ -1,0 +1,22 @@
+  <h1> <%= @recipe["title"] %> </h1>
+  <h3> Chef: <%= @recipe["chef"] %> </h3>
+  <h4> Prep Time: <%= @recipe["formatted"]["prep_time"] %> </h4>
+
+  <a href="/client/recipes/<%= @recipe["id"] %>">Edit</a>
+  <a href="/client/recipes/<%= @recipe["id"] %>" data-method="delete">Delete</a>
+
+  <h4> Ingredients: </h4>
+    <ul>
+      <% @recipe["formatted"]["ingredients"].each do |ingredient| %>
+        <li> <%= ingredient %> </li>
+      <% end %>
+    </ul>
+  <h4> Recipe: </h4>
+
+  <ol>
+    <% @recipe["formatted"]["directions"].each do |direction| %>
+      <li> <%= direction %> </li>
+    <% end %>
+  </ol>
+
+  <a href="/client/recipes"></a>
