@@ -49,7 +49,7 @@ class Client::RecipesController < ApplicationController
                     image_url: params[:image_url]
                     }
     
-    response = HTTP.post(
+    response = HTTP.patch(
                         "http://localhost:3000/api/recipes/#{ params[:id] }", 
                         form: client_params
                         )
